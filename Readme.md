@@ -2,7 +2,6 @@
 [![travis][travis-image]][travis-url]
 [![npm][npm-image]][npm-url]
 [![downloads][downloads-image]][downloads-url]
-[![js-standard-style][standard-image]][standard-url]
 
 
 Types definition for arbirtary JSON

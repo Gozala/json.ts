@@ -1,13 +1,13 @@
 {
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "test/**/*"
   ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "es2015",
     "module": "commonjs",
     "declaration": true,
@@ -19,10 +19,8 @@
     "outDir": "./",
     "forceConsistentCasingInFileNames": true,
     "lib": [
-      "es2016"
-    ],
-    "types":[
-
+      "es2016",
+      "dom"
     ]
   }
 }

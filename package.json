@@ -20,12 +20,16 @@
     "typescript": "^2.3.2"
   },
   "scripts": {
-    "test": "./scripts/test-tape",
-    "test:tape": "./scripts/test-tape",
-    "build": "./scripts/build-node",
-    "prepare": "./scripts/build-node",
-    "build:node": "./scripts/build-node",
-    "build:docs": "./scripts/build-docs",
-    "build:clean": "./scripts/build-clean"
+    "test": "npm run test:tape",
+    "test:tape": "ts-node node_modules/tape/bin/tape test/**/*.ts",
+    "build": "npm run build:clean && npm run build:node && npm run build:docs",
+    "prepare": "npm run build:node",
+    "prepublishOnly": "npm run build && npm run test",
+    "build:node": "tsc --project tsconfig.build.json",
+    "build:docs": "typedoc --entryPoint '\"JSON\"' --tsconfig tsconfig.build.json --readme none --theme minimal --out ./docs",
+    "build:clean": "rm -f ./*.js && rm -f ./*.d.ts"
+  },
+  "dependencies": {
+    "result.ts": "^0.3.1"
   }
 }
